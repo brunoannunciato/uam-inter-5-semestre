@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Unify</title>
 </head>
@@ -32,7 +32,7 @@
                     <p class="text-white school-name">
                         Colégio Módulo
                     </p>
-                    <p class="text-white school-points">
+                    <p class="text-white text-thin school-points">
                         <?='1500'?>pts
                     </p>
                 </div>
@@ -51,6 +51,9 @@
                     <p class="position">
                         1
                     </p>
+                    <div class="stutend-img-wrapper">
+                        <img src="img/lorem-person.png" alt="Foto do estudante">
+                    </div>
                     <div class="datas">
                         <p class="name">
                             <?='Vinicius Felippe'?>
