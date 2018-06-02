@@ -1,33 +1,32 @@
 {
-  "name": "UAM Inter 5 semestre",
+  "name": "uam-inter-5-semestre",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "check": "phpcs --standard=WordPress-Extra --extensions=php . > check.txt",
+    "fix": "phpcbf --standard=WordPress-Extra --extensions=php ."
+  },
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "form-serialize": "^0.7.2",
-    "jquery-mask-plugin": "^1.14.15",
-    "slick-carousel": "^1.8.1"
+    "vanilla-masker": "^1.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "browser-sync": "^2.23.6",
-    "css-mqpacker": "^6.0.2",
+    "autoprefixer": "^7.2.3",
+    "browser-sync": "^2.18.13",
+    "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
-    "exports-loader": "^0.7.0",
+    "exports-loader": "^0.6.4",
     "gulp": "^3.9.1",
-    "gulp-awspublish": "^3.3.3",
-    "gulp-eslint": "^4.0.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.0",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
-    "uglifyjs-webpack-plugin": "^1.2.4",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^4.0.3"
+    "webpack-stream": "^4.0.0"
   }
 }

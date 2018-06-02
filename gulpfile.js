@@ -17,13 +17,11 @@ const paths = {
 	styles: 'src/styles/**/*.scss',
 	images: 'src/images/**/*.{png,jpeg,jpg,svg,gif}',
 	extras: ['src/*.*', 'src/fonts/**/*'],
-	pages: ['src/pages/*.php'],
 	dest: {
 		scripts: 'dist/js',
 		styles: 'dist/css',
 		images: 'dist/img',
-		extras: 'dist',
-		pages: 'dist/pages'
+		extras: 'dist'
 	}
 };
 
@@ -34,7 +32,19 @@ const lint = function (files, options = {}) {
 		.pipe($.eslint.failAfterError());
 };
 
-gulp.task('lint:client', () => lint(paths.scripts));
+gulp.task('lint:client', () => lint(paths.scripts, {
+	rules: {
+		'no-var': 0
+	},
+	globals: [
+		'Nitro',
+		'jQuery',
+		'$'
+	],
+	envs: [
+		'browser'
+	]
+}));
 
 gulp.task('scripts', ['lint:client'], () => {
 	return gulp.src(paths.webpack)
@@ -58,10 +68,7 @@ gulp.task('scripts', ['lint:client'], () => {
 				}
 			},
 			plugins: [
-				$.util.env.production ? new uglify() : $.util.noop,
-				new webpack.webpack.ProvidePlugin({
-					Util: 'exports-loader?Util!bootstrap/js/dist/util'
-				})
+
 			],
 			devtool: $.util.env.production ? '' : '#source-map'
 		}))
@@ -77,7 +84,6 @@ gulp.task('styles', () => {
 			errLogToConsole: true,
 			includePaths: [
 				'node_modules',
-				'node_modules/bootstrap/scss',
 			]
 		}).on('error', $.sass.logError))
 		.pipe($.postcss($.util.env.production ? [
@@ -133,23 +139,5 @@ gulp.task('default', ['clean'], () => gulp.start('serve'));
 gulp.task('deploy', ['clean'], () => {
 	$.util.env.production = true;
 
-	gulp.start('publish');
-});
-
-gulp.task('publish', [ 'images', 'styles', 'scripts', 'extras'], function() {
-
-	var credentials = JSON.parse( require('fs').readFileSync('aws-credentials.json') ),
-		publisher = $.awspublish.create( credentials );
-
-	return gulp
-		.src([ 'dist/**', '!dist/**/*.map' ])
-		.pipe($.rename( path => {
-			path.dirname = 'cadastre-seu-estabelecimento/' + path.dirname;
-		}))
-		.pipe($.awspublish.gzip())
-		.pipe(publisher.publish({
-			'Cache-Control': 'public, max-age=315360000'
-		}))
-		.pipe(publisher.cache())
-		.pipe($.awspublish.reporter());
+	gulp.start(['images', 'scripts', 'styles', 'extras']);
 });
