@@ -66,8 +66,9 @@ body.quiz {
             .timer-bar {
                 background: #f0ebe6;
                 border-radius: 10px;
-                height: 15px;;
+                height: 15px;
                 width: 67%;
+                overflow: hidden;
             }
 
             .actived {

@@ -10,9 +10,7 @@
 </head>
 <body class="home">
     <div class="container">
-        <header>
-            <img src="img/logo.png" alt="Unify" class="logo">
-        </header>
+    <?php include('header.php') ?>
         
         <section class="welcome">
             <div class="greetings">
