@@ -11,7 +11,7 @@
 <body class="cadastro">
     <div class="container">
         <header>
-            <img src="img/logo.png" alt="Unify" class="logo">
+            <img src="img/logo-min-colorido.png" alt="Unify" class="logo">
             <a href="/">
                 <img src="img/close-button.png" alt="Fechar" class="close-button">
             </a>

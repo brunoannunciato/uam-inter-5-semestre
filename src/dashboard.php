@@ -10,9 +10,7 @@
 </head>
 <body class="dashboard">
     <div class="container">
-        <header>
-            <img src="img/logo.png" alt="Unify" class="logo">
-        </header>
+        <?php include('header.php') ?>
         
         <section class="greeting">
             <h1 class="title">
@@ -26,11 +24,11 @@
 
             <div class="school">
                 <div class="school-logo-wrapper">
-                    <img src="img/logo.png" alt="Logo da escola">
+                    <img src="<?='img/escola-logo.jpg'?>" alt="Logo da escola">
                 </div>
                 <div class="datas">
                     <p class="text-white school-name">
-                        Colégio Módulo
+                        <?='Colégio Módulo'?>
                     </p>
                     <p class="text-white text-thin school-points">
                         <?='1500'?>pts
@@ -47,29 +45,31 @@
                 Melhores Alunos
             </h2>
             <ol class="rank">
-                <li class="student">
-                    <p class="position">
-                        1
-                    </p>
-                    <div class="stutend-img-wrapper">
-                        <img src="img/lorem-person.png" alt="Foto do estudante">
-                    </div>
-                    <div class="datas">
-                        <p class="name">
-                            <?='Vinicius Felippe'?>
-                        </p>
-                        <p class="school">
-                            <?='Instituto Bradesco'?>
-                        </p>
-                    </div>
-                    <p class="points">
-                        <?='850'?>pts
-                    </p>
-                </li>
+                <a href="/student-profile.php">
+                    <li class="student">
+                            <p class="position">
+                                1
+                            </p>
+                            <div class="stutend-img-wrapper">
+                                <img src="<?='img/lorem-person.png'?>" alt="Foto do estudante">
+                            </div>
+                            <div class="datas">
+                                <p class="name">
+                                    <?='Vinicius Felippe'?>
+                                </p>
+                                <p class="school">
+                                    <?='Instituto Bradesco'?>
+                                </p>
+                            </div>
+                            <p class="points">
+                                <?='850'?>pts
+                            </p>
+                    </li>
+                </a>
             </ol>
         </section>
         <section class="cta">
-            <button class="button">Participe do Quiz</button>
+            <a href="quiz.php" class="button">Participe do Quiz</a>
         </section>
     </div>
    
