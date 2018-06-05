@@ -1,4 +1,5 @@
 node_modules
+vendor
 dist
-layout.xd
+composer.lock
 package-lock.json
