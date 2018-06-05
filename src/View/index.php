@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/webroot/css/style.css">
     <title>Unify</title>
 </head>
 <body class="home">
     <div class="container">
-    <?php include('header.php') ?>
-        
+    <?php include('pages/header.php') ?>
+
         <section class="welcome">
             <div class="greetings">
                 <h1 class="title">
@@ -33,6 +33,6 @@
             </div>
         </section>
     </div>
-   
+
 </body>
 </html>

@@ -23,6 +23,14 @@ $router->get('/view/(\w+)', function ($view) {
     return $html;
 });
 
+$router->get('/webroot/(.*)', function ($uri) {
+    ob_start();
+    require dirname(__DIR__) . "/public/webroot/{$uri}";
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+});
+
 $router->get('/(.*)', function ($uri) {
     var_dump('here final');
     var_dump($uri);
