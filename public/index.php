@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-use App\Router;
+use Unify\Router;
 
 $router = new Router();
 

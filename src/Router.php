@@ -1,15 +1,9 @@
 <?php
 
-namespace App;
+namespace Unify;
 
 /**
- * Class Router
- * @package Hero
- *
- * @method Router get($route, $callable)
- * @method Router post($route, $callable)
- * @method Router put($route, $callable)
- * @method Router delete($route, $callable)
+ * Router
  */
 class Router
 {
